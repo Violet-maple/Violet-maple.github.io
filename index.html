@@ -152,6 +152,158 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-gitbub搭建博客详细流程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="使用hexo和github搭建个人博客"><a href="#使用hexo和github搭建个人博客" class="headerlink" title="使用hexo和github搭建个人博客"></a>使用hexo和github搭建个人博客</h1><ul>
+<li>系统windows</li>
+</ul>
+<h2 id="什么是Hexo-Git-Node-js"><a href="#什么是Hexo-Git-Node-js" class="headerlink" title="什么是Hexo/Git/Node.js?"></a>什么是Hexo/Git/Node.js?</h2><ul>
+<li>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页</li>
+<li>Git是…</li>
+<li>Node.js是…</li>
+</ul>
+<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><h3 id="1-1安装git"><a href="#1-1安装git" class="headerlink" title="1-1安装git"></a>1-1安装git</h3><ul>
+<li>Windows用户建议使用这个<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">下载地址</a>下载, 找到合适的版本进行下载</li>
+<li>安装时, 一路next即可</li>
+</ul>
+<h3 id="1-2安装Node-js"><a href="#1-2安装Node-js" class="headerlink" title="1-2安装Node.js"></a>1-2安装Node.js</h3><ul>
+<li>Windows用户下载对应的<a href="https://nodejs.org/en/" target="_blank" rel="noopener">下载地址</a>进行安装, 建议下载大多数人用的版本</li>
+<li>安装时, 一路next即可</li>
+</ul>
+<h3 id="1-3安装Hexo"><a href="#1-3安装Hexo" class="headerlink" title="1-3安装Hexo"></a>1-3安装Hexo</h3><ul>
+<li><p>检查是否安装好以上两个程序, 在桌面点击鼠标右键, 选择</p>
+<p><img src="imgs\01.jpg" alt="01"></p>
+<p>在打开的类似Linux的命令行中输入命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git --version</span><br><span class="line">$ note --version</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在以上的两个必备的应用程序安装完成之后</li>
+<li>我们再安装Hexo.</li>
+</ul>
+</li>
+<li><p>使用如下命令安装:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+<h2 id="2-建站"><a href="#2-建站" class="headerlink" title="2.建站"></a>2.建站</h2><h3 id="2-1初始化"><a href="#2-1初始化" class="headerlink" title="2-1初始化"></a>2-1初始化</h3><ul>
+<li><p>安装 Hexo 成功后，执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;  # folder 是文件夹名 </span><br><span class="line">$ cd &lt;folder&gt;         # 进入新建号的文件夹中</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果没有出现error, 则成功建立了站</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2安装server"><a href="#2-2安装server" class="headerlink" title="2-2安装server"></a>2-2安装server</h3><ul>
+<li><p>执行以下命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-server --save</span><br></pre></td></tr></table></figure>
+<ul>
+<li>启动server, 试一试看成功没:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p><img src="imgs\02.jpg" alt="02"></p>
+<p>我们把这个网址复制下来并粘贴到浏览器中打开即可看到 Hexo 默认的主题博客了，</p>
+<p>如果没有成功的话建议查看自己是否有操作不当的地方或者命令错误</p>
+</li>
+<li><p>回到命令窗口Ctrl + c 关闭server</p>
+</li>
+</ul>
+<h2 id="3-部署"><a href="#3-部署" class="headerlink" title="3.部署"></a>3.部署</h2><h3 id="3-1建立Git仓库"><a href="#3-1建立Git仓库" class="headerlink" title="3-1建立Git仓库"></a>3-1建立Git仓库</h3><ul>
+<li>因为要使用到 Git ， 所以我们需要先建立一个新的仓库，(默认都申请了一个GitHub账号了)</li>
+</ul>
+<p><img src="imgs\03.jpg" alt="03"></p>
+<p>​    注意: 这里在建仓库的时候, 仓库的名字一定要按照 &lt;用户名&gt;.github.io 这样的格式来写:</p>
+<p>​    例:</p>
+<p><img src="imgs\04.jpg" alt="04"></p>
+<h3 id="3-2-生成SSH-keys"><a href="#3-2-生成SSH-keys" class="headerlink" title="3-2 生成SSH keys"></a>3-2 生成SSH keys</h3><ul>
+<li><p>添加 ssh keys , 使用如下命令操作生成SSH key:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;user@mail.com&quot;   # mail 最好是建立GitHub有效的邮箱</span><br></pre></td></tr></table></figure>
+<p>输入此命令时候, 会出现设置密码: 直接Enter 3次 , 即设置密码为空</p>
+</li>
+<li><p>最后在用户目录下(administrator)得到两个文件:id_rsa.pub 和 id_rsa</p>
+</li>
+<li><p>生成密钥完成后， 我们将 id_rsa.pub 中的所有内容拷贝到github中相应的位置中去</p>
+</li>
+<li><p>找到 github 中的设置 :</p>
+<p><img src="imgs\05.jpg" alt="05"></p>
+<p>​</p>
+</li>
+</ul>
+<p><img src="imgs\06.jpg" alt="06"></p>
+<p><img src="imgs\07.jpg" alt="07"></p>
+<p>将我们生成的在 id_rsa.pub 中的内容 拷贝到其中</p>
+<h3 id="3-3-更该配置"><a href="#3-3-更该配置" class="headerlink" title="3-3 更该配置"></a>3-3 更该配置</h3><ul>
+<li><p>在你的初始化文件夹下找到 _config.yml 这个文件并打开</p>
+</li>
+<li><p>这里最好使用 <strong>Sublime</strong>或者 <strong>Hbuilder</strong> 打开</p>
+</li>
+<li><p>打开后做如下修改，这里注意空格 repository 就是 github 为我们生成的一个地址:</p>
+<p><img src="imgs\09.jpg" alt="09"></p>
+</li>
+</ul>
+<h3 id="3-4-生成静态网页并部署"><a href="#3-4-生成静态网页并部署" class="headerlink" title="3-4 生成静态网页并部署"></a>3-4 生成静态网页并部署</h3><ul>
+<li><p>命令如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean    # 清理缓存</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在你建站的文件夹里找到:</p>
+<p><img src="imgs\10.jpg" alt="10"></p>
+</li>
+<li><p>进入source/_posts/hello_world.md    此为默认的主页页面, 更改你的即可! </p>
+</li>
+<li><p>更改了内容记得输入命令更新下: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其他配置后续跟进…</p>
+</li>
+</ul>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><ul>
+<li>最后在浏览器中输入我们的地址即可 即 username.github.io 其中username为你自己创建仓库的名字</li>
+<li>当然在以上操作中如果遇到什么错误 这里也许可以帮到你       <a href="https://hexo.bootcss.com/docs/troubleshooting.html" target="_blank" rel="noopener">Hexo帮助</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/26/gitbub搭建博客详细流程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-python-study42" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
