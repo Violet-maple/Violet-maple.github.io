@@ -1,5 +1,5 @@
 ---
-title: python-study42
+title: study42
 date: 2018-05-26 09:51:27
 tags:
 ---
