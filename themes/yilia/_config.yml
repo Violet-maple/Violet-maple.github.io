@@ -69,7 +69,7 @@ google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar: https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/head.jpg?raw=true
+avatar: https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/head.jpg?raw=true
 
 #是否开启分享
 share_jia: true
