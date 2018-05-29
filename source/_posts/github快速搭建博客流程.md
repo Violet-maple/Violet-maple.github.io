@@ -1,5 +1,5 @@
 ---
-title: github快速搭建网页流程
+title: github快速搭建博客流程
 date: 2018-05-26 15:18:26
 tags:
 ---
@@ -45,7 +45,7 @@ tags:
 
 - 检查是否安装好以上两个程序, 在桌面点击鼠标右键, 选择
 
-  ![01](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/01.jpg?raw=true)
+  ​		![01](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/01.jpg?raw=true)
 
   在打开的类似Linux的命令行中输入命令:
 
@@ -91,7 +91,7 @@ tags:
   $ hexo server
   ```
 
-  ![02](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/02.jpg?raw=true)
+  ​		![02](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/02.jpg?raw=true)
 
   我们把这个网址复制下来并粘贴到浏览器中打开即可看到 Hexo 默认的主题博客了，
 
@@ -105,13 +105,13 @@ tags:
 
 - 因为要使用到 Git ， 所以我们需要先建立一个新的仓库，(默认都申请了一个GitHub账号了)
 
-![03](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/03.jpg?raw=true)
+  ​	![03](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/03.jpg?raw=true)
 
 ​	注意: 这里在建仓库的时候, 仓库的名字一定要按照 <用户名>.github.io 这样的格式来写:
 
 ​	例:
 
-![04](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/04.jpg?raw=true)
+​		![04](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/04.jpg?raw=true)
 
 ### 3-2 生成SSH keys
 
@@ -129,15 +129,17 @@ tags:
 
 - 找到 github 中的设置 :
 
-  ![05](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/05.jpg?raw=true)
+  ​		![05](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/05.jpg?raw=true)
 
   ​
 
-![06](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/06.jpg?raw=true)
+![06](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/06.jpg?raw=true)
 
-![07](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/07.jpg?raw=true)
+​	   		   						![07](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/07.jpg?raw=true)
 
-将我们生成的在 id_rsa.pub 中的内容 拷贝到其中
+   
+
+​    将我们生成的在 id_rsa.pub 中的内容 拷贝到其中
 
 ### 3-3 更该配置
 
@@ -147,11 +149,11 @@ tags:
 
 - 打开后做如下修改，这里注意空格 repository 就是 github 为我们生成的一个地址:
 
-  ![09](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/09.jpg?raw=true)
+  ​		![09](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/09.jpg?raw=true)
 
 - 将其地址复制到建站文件中的配置文件:  _config.yml 用sublime 等打开修改
 
-  ![08](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/08.jpg?raw=true)
+  ​		![08](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/08.jpg?raw=true)
 
 ### 3-4 生成静态网页并部署
 
@@ -165,7 +167,7 @@ tags:
 
 - 在你建站的文件夹里找到:
 
-  ![10](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/10.jpg?raw=true)
+  ​		![10](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/10.jpg?raw=true)
 
 - 进入source/_posts/hello_world.md    此为默认的主页页面, 更改你的即可! 
 

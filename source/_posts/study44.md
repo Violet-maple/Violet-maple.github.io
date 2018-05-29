@@ -1,5 +1,5 @@
 ---
-title: study-day44
+title: study44
 date: 2018-05-28 23:51:27
 tags:
 ---
@@ -51,7 +51,7 @@ import pymysql
 pymysql.install_as_MySQLdb()
 ```
 
-###4. url反向解析
+### 4. url反向解析
 
 - html页面的解析
 

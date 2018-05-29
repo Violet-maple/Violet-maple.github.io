@@ -18,7 +18,7 @@ tags:
 
 ### 1-1 打开pycharm选择创建Django项目, 名字为car
 
-​	   		  ![Django-01](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/Django-01.png?raw=true)
+​	   		  ![Django-01](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/Django-01.png?raw=true)
 
 - 在左下角点击Terminal打开命令窗口输入下面命令启动服务
 
@@ -26,11 +26,11 @@ tags:
   python manage.py runserver
   ```
 
-  ![Django-02](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/Django-02.png?raw=true)
+  ![Django-02](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/Django-02.png?raw=true)
 
   - 点击上图地址处, 网页出现下图样式, 则开启成功
 
-  ![Django-03](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/Django-03.png?raw=true)
+  ![Django-03](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/Django-03.png?raw=true)
 
 - 没有成功就应该安装Django, 再重新启动服务
 
@@ -48,7 +48,7 @@ pip install pymysql
 
 - 安装成功后, 点击car项目下的init 导入其中:
 
-  ![Django-04](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/Django-04.png?raw=true)
+  ![Django-04](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/Django-04.png?raw=true)
 
 ### 1-2 创建应用
 
@@ -79,7 +79,7 @@ pip install pymysql
 
 - 打开app应用search中的models.py , 输入类carrecord:
 
-  ![django05](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/Django-05.png?raw=true)
+  ![django05](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/Django-05.png?raw=true)
 
 ## 2. 建立数据库
 
@@ -120,7 +120,7 @@ pip install pymysql
 
 - 打开数据库随意加入数据供后面使用:
 
-  ![django05](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/Django-06.png?raw=true)
+  ![django06](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/Django-06.png?raw=true)
 
 ## 3. 建立视图和模板
 
@@ -128,7 +128,7 @@ pip install pymysql
 
 - 打开views.py
 
-  ![django05](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/Django-07.png?raw=true)
+  ![django07](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/Django-07.png?raw=true)
 
   ```python
   # 通过render渲染页面后先用set_cookie方法设置cookie后再返回HttpResponse对象
@@ -156,7 +156,7 @@ pip install pymysql
 
 ### 3-2 建立模板页Templates
 
-![Django-08](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/Django-08.png?raw=true)
+![Django-08](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/Django-08.png?raw=true)
 
 ​	**说明**: 此模板页大致这样, 可根据你自己的喜好样式设计, 此处就不作过多解释
 
@@ -180,7 +180,7 @@ pip install pymysql
 
 - 进入后 , 输入车牌号进行查询验证:
 
-  ![Django-08](https://github.com/Violet-maple/Violet-maple.github.io/blob/master/img/Django-09.png?raw=true)
+  ![Django-09](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/Django-09.png?raw=true)
 
 ### 以上就是大概流程, 如有好的建议, 请指正!
 
