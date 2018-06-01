@@ -3,6 +3,8 @@
 menu:
   首 页: /
   随 笔: /tags/随笔/
+subtitle:
+  热爱生活的一个小朋友
 
 # SubNav
 subnav:
@@ -126,6 +128,9 @@ friends:
   友情链接-*培: https://jamey92.github.io/
   友情链接-*跃: https://magicianly.github.io/
   友情链接-*飞: https://berg1994.github.io/
-  友情链接-*兵: https://lidongbingjean.github.io/
-
+  友情链接-*兵: https://asenli.github.io/
+  友情链接-*庆: https://crazymilk.github.io/
+  
 aboutme: 很惭愧<br><br>第一次做博客网页<br>谢谢大家指正
+        飞:  https://github.com/coco369
+        昊: https://github.com/jackfrued
