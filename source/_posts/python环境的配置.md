@@ -36,7 +36,7 @@ tags:
 
 首先，根据你的Windows版本（64位还是32位）从Python的官方网站下载Python 3.6对应的[64位安装程序](https://www.python.org/ftp/python/3.6.4/python-3.6.4-amd64.exe)或[32位安装程序](https://www.python.org/ftp/python/3.6.4/python-3.6.4.exe)
 
- ![python-pip01](img\python-pip01.png)
+ ![python-pip01](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/python-pip01.png?raw=true)
 
 **特别要注意**勾上`Add Python 3.6 to PATH`，添加到环境变量中. 然后点“Install Now”即可完成安装
 
@@ -45,7 +45,7 @@ tags:
 - 安装成功后，打开命令提示符窗口，敲入python后，会出现两种情况：
 - 情况一：
 
-![python-pip02](img\python-pip02.png)
+![python-pip02](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/python-pip02.png?raw=true)
 
    看到上面的画面，就说明Python安装成功！
 
@@ -58,17 +58,17 @@ tags:
 
 ```
 
-![python-pip03](img\python-pip03.png)
+![python-pip03](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/python-pip03.png?raw=true)
 
 这是因为Windows会根据一个`Path`的环境变量设定的路径去查找`python.exe`，如果没找到，就会报错。如果在安装时漏掉了勾选`Add Python 3.6 to PATH`，那就要手动把`python.exe`所在的路径添加到Path中
 
 - 桌面 `我的电脑` 右键点击属性:
 
-  ![python-pip04](img\python-pip04.png)
+  ![python-pip04](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/python-pip04.png?raw=true)
 
 - 进入到环境变量:
 
-  ![python-pip05](img\python-pip05.png)
+  ![python-pip05](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/python-pip05.png?raw=true)
 
 - 在变量值里 末尾添加输入你python 的地址 
 

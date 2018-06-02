@@ -1,14 +1,10 @@
 ---
-title: github快速搭建博客流程
+title: 使用hexo和github搭建个人博客
 date: 2018-05-26 15:18:26
 tags:
 ---
 
-# 使用hexo和github搭建个人博客
-
-- 环境 - windows系统
-
-## 什么是Hexo/Git/Node.js ?
+***什么是Hexo/Git/Node.js ?***
 
 - Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 [Markdown](http://daringfireball.net/projects/markdown/)（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页
 - Git是目前世界上最先进的分布式版本控制系统（没有之一）
@@ -18,6 +14,8 @@ tags:
 <!--more-->
 
 ## 1.安装
+
+- 环境 - windows系统
 
 ### 1-1安装git
 
@@ -107,11 +105,11 @@ tags:
 
   ​	![03](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/03.jpg?raw=true)
 
-​	注意: 这里在建仓库的时候, 仓库的名字一定要按照 <用户名>.github.io 这样的格式来写:
+  ​注意: 这里在建仓库的时候, 仓库的名字一定要按照 <用户名>.github.io 这样的格式来写:
 
-​	例:
+  ​例:
 
-​		![04](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/04.jpg?raw=true)
+  ​	![04](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/04.jpg?raw=true)
 
 ### 3-2 生成SSH keys
 

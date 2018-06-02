@@ -4,7 +4,7 @@ tags:
 
 ---
 
-### 关于django 对http页面的处理
+
 
 **前言:**
 
@@ -40,7 +40,7 @@ pip instatll virtualenv
 
 - 先查看一下安装虚拟环境有那些参数，是必须填写的
 
-  ![virtualenv_help](img\virtualenv_help.png)
+  ![virtualenv_help](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/virtualenv_help.png?raw=true)
 
 **注意**两个参数：
 --no-site-packages和-p参数 
@@ -55,7 +55,7 @@ virtualenv --no-site-packages venv    # 建一个独立干净环境
 
 ​	以下是指定安装虚拟环境中的python版本的安装方式：
 
-​	![virtualenv_env_p](img\virtualenv_env_p.png)
+​	![virtualenv_env_p](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/virtualenv_env_p.png?raw=true)
 
 #### 1.3 进入/退出venv
 
@@ -81,11 +81,11 @@ pip list
 - 大致有这些:
 
 ```python
-pip install django==1.11                 # 指定django版本1.11
-pip install pyMySQL                      # pymysql是python第3方库
-pip install djangorestframework==3.4.6   # 指定为3.4.6版本(才能用下面django_filter中的filters模块)
-pip install pillow
-pip install django_filter
+pip install django==1.11                # 指定django版本1.11
+pip install pyMySQL                     # pymysql是python第3方库
+pip install djangorestframework==3.4.6  # 指定为3.4.6版本(才能用下面django_filter中的filters模块)
+pip install pillow                      # 此包为加载form表单上传图片的操作
+pip install django_filter               # 过滤器包
 ...
 ```
 
