@@ -98,7 +98,11 @@ jsonContent:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
+
+# 主题下载官网
+# http://jekyllthemes.org/
 theme: yilia
+# theme: landscape
 
 
 # Deployment
