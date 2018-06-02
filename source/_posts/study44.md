@@ -1,23 +1,24 @@
 ---
-title: study44
+title: 关于环境的建立
 date: 2018-05-28 23:51:27
 tags:
 ---
 
 ### 1. 创建虚拟环境
 
-- 创建独立的干净的虚拟环境
+- 创建独立干净的虚拟环境
 
-<!--more-->
 
 - 进入命令行模式输入:
 
+<!--more-->
+
 ```python
-pip instatll virtualenv
-virtualenv --no-site-packages djangoenv
+pip instatll virtualenv               # 安装virtualenv软件
+virtualenv --no-site-packages venv    # 建一个独立干净环境
 ```
 
-- 查看pip安装过的包
+- 查看pip安装过包的版本
 
 ```
 pip freeze
