@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>关于环境的建立 | master-yu 博客-主页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. 创建虚拟环境 创建独立干净的虚拟环境   进入命令行模式输入:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于环境的建立">
+<meta property="og:url" content="http://yoursite.com/2018/05/28/study44/index.html">
+<meta property="og:site_name" content="master-yu 博客-主页">
+<meta property="og:description" content="1. 创建虚拟环境 创建独立干净的虚拟环境   进入命令行模式输入:">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-02T17:11:02.201Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于环境的建立">
+<meta name="twitter:description" content="1. 创建虚拟环境 创建独立干净的虚拟环境   进入命令行模式输入:">
+  
+    <link rel="alternate" href="/atom.xml" title="master-yu 博客-主页" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">master-yu 博客-主页</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-study44" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/28/study44/" class="article-date">
+  <time datetime="2018-05-28T15:51:27.000Z" itemprop="datePublished">2018-05-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于环境的建立
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-创建虚拟环境"><a href="#1-创建虚拟环境" class="headerlink" title="1. 创建虚拟环境"></a>1. 创建虚拟环境</h3><ul>
+<li>创建独立干净的虚拟环境</li>
+</ul>
+<ul>
+<li>进入命令行模式输入:</li>
+</ul>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip instatll virtualenv               <span class="comment"># 安装virtualenv软件</span></span><br><span class="line">virtualenv --no-site-packages venv    <span class="comment"># 建一个独立干净环境</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看pip安装过包的版本</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip freeze</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看所有安装过的包</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
+<ul>
+<li>先装一下库：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install django==<span class="number">1.11</span>   <span class="comment"># 指定1.11版本  默认是最新版</span></span><br><span class="line">pip install pymysql        <span class="comment"># 装python模块 pymysql</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-创建项目并且运行"><a href="#2-创建项目并且运行" class="headerlink" title="2. 创建项目并且运行"></a>2. 创建项目并且运行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">django-amdin startproject day1</span><br><span class="line">python manage.py startapp app</span><br><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
+<h3 id="3-配置pymysql"><a href="#3-配置pymysql" class="headerlink" title="3. 配置pymysql"></a>3. 配置pymysql</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import pymysql</span><br><span class="line">pymysql.install_as_MySQLdb()</span><br></pre></td></tr></table></figure>
+<h3 id="4-url反向解析"><a href="#4-url反向解析" class="headerlink" title="4. url反向解析"></a>4. url反向解析</h3><ul>
+<li>html页面的解析</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">src = '/app/left/'                    # 绝对路径</span><br><span class="line">src = "&#123;% url 'namespace:name' %&#125;"    # 动态路径  方便更改</span><br></pre></td></tr></table></figure>
+<h3 id="5-静态解析"><a href="#5-静态解析" class="headerlink" title="5. 静态解析"></a>5. 静态解析</h3><ul>
+<li>方法一:</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">'/statc/img/xxx.css'</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>方法二:</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% load static %&#125;   # 要先加载一下</span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">'&#123;% static "img/xxx.css" %&#125;'</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="6-过滤器-‘-’"><a href="#6-过滤器-‘-’" class="headerlink" title="6. 过滤器 ‘|’"></a>6. 过滤器 ‘|’</h3><ul>
+<li>lower </li>
+<li>upper</li>
+<li>date:y-m-d h:m:s</li>
+<li>add:1 </li>
+<li>add:-1</li>
+</ul>
+<h3 id="7-get和filter区别"><a href="#7-get和filter区别" class="headerlink" title="7. get和filter区别"></a>7. get和filter区别</h3><ul>
+<li>get一定要确定能获取到唯一一个对象</li>
+<li>filter：能获取很多对象，queryset</li>
+<li>first():获取第一个</li>
+<li>[:1]</li>
+<li>last()：获取最后一个</li>
+</ul>
+<h3 id="8-分页"><a href="#8-分页" class="headerlink" title="8. 分页"></a>8. 分页</h3><ul>
+<li>paginator对象</li>
+<li>page_range：获取当前一共有多少页 range(1,3)</li>
+<li>page对象：</li>
+<li>通过page获取paginator对象：page.paginator</li>
+<li>has_next:是否有上一页</li>
+<li>has_previous：是否又下一页</li>
+<li>next_page_number：上一页的页码</li>
+<li>previous_page_number：下一个的页码</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/28/study44/" data-id="cjhxnugin0004y0l15khulig2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/02/关于django的简单运用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          关于django项目的建立
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/27/django快速搭建网页/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">使用Django快速搭建网页</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/06/02/关于django的简单运用/">关于django项目的建立</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/28/study44/">关于环境的建立</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/27/django快速搭建网页/">使用Django快速搭建网页</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/26/github快速搭建博客流程/">使用hexo和github搭建个人博客</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/26/study42/">study-mvt</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 master_yu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
