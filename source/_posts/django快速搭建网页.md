@@ -1,10 +1,8 @@
 ---
-title: django快速搭建网页
+title: 使用Django快速搭建网页
 date: 2018-05-27 14:23:10
 tags:
 ---
-
-# 使用Django快速搭建网页
 
 - `Django`是一个开放源代码的Web应用框架，由Python写成
 - 它采用了MTV的框架模式，即模型M、模板T和视图V。

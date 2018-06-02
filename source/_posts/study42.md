@@ -1,8 +1,14 @@
 ---
-title: study42
+title: study-mvt
 date: 2018-05-26 09:51:27
 tags:
 ---
+
+**序列化/Json格式转换:**
+
+- 关于内存原理:  [Get live help](http://pythontutor.com)
+
+<!--more-->
 
 ## 1. 项目原型设计:
 
@@ -12,8 +18,6 @@ tags:
 
   - 线框图
   - 高保真原型
-
-<!--more-->
 
 #### 1-1-2. Sketch 
 
