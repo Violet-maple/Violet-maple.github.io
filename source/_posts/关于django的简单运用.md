@@ -21,11 +21,9 @@ tags:
 
 ### 1. 建立独立虚拟环境
 
-<!--more-->
-
 ***注意***: 特此默认已经有python/pip等软件 没有就移到  [配置python环境](https://violet-maple.github.io/2018/05/02/python环境的配置/#more)
 
-#### 1-1安装virtualenv
+#### 1-1 安装virtualenv
 
 - 进入命令模式中输入:
 
@@ -36,7 +34,7 @@ tags:
 pip instatll virtualenv  
 ```
 
-#### 1-1 创建虚拟环境
+#### 1-2 创建虚拟环境
 
 - 先查看一下安装虚拟环境有那些参数，是必须填写的
 
@@ -57,11 +55,11 @@ virtualenv --no-site-packages venv    # 建一个独立干净环境
 
 ​	![virtualenv_env_p](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/virtualenv_env_p.png?raw=true)
 
-#### 1.3 进入/退出venv
+#### 1-3  进入/退出venv
 
 ```python
 cd venv/Scripts/文件夹  使用activate命令   # 进入
-deactivate                                # 退出
+deactivate                               # 退出
 ```
 
 - 查看pip安装过包的版本
@@ -114,7 +112,7 @@ django-admin startproject day010    # 项目名为day010
 
 - Terminal中输入:
 
-  ```
+  ```python
   python manage.py runserver
   ```
 
