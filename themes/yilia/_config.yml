@@ -3,9 +3,9 @@
 menu:
   首 页: /
   随 笔: /tags/随笔/
-subtitle:
+subtitle: 
   热爱生活的一个小朋友
-
+  
 # SubNav
 subnav:
   github: "https://github.com/Violet-maple/"
@@ -19,7 +19,7 @@ subnav:
   #segmentfault: "#"
   #bilibili: "#"
   #acfun: "#"
-  #mail: "mailto:litten225@qq.com"
+  # mail: "mailto:litten225@qq.com"
   #facebook: "#"
   #google: "#"
   #twitter: "#"
@@ -31,7 +31,7 @@ rss: /atom.xml
 # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
 # 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
 url: http://yoursite.com
-root: /
+root: /blog/
 
 # Content
 
@@ -130,8 +130,10 @@ friends:
   友情链接-*飞: https://berg1994.github.io/
   友情链接-*兵: https://asenli.github.io/
   友情链接-*庆: https://crazymilk.github.io/
-  
+
 aboutme: 很惭愧<br><br>第一次做博客网页<br>谢谢大家指正<br><br>
         老王 &nbsp;&nbsp; https://github.com/coco369 <br>
         老骆 &nbsp;&nbsp; https://github.com/jackfrued <br>
-        python &nbsp;     https://github.com/Python3WebSpider <br>
+        python&nbsp;https://github.com/Python3WebSpider <br>
+
+
