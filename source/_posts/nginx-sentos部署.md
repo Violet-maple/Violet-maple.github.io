@@ -1,10 +1,10 @@
-titlle: 使用centos部署django项目
-
-data: 2018-06-10
+title:  使用centos部署django项目
+date: 2018-06-10 14:23:58
+tags:
 
 ---
 
-#### nginx + uWSGI + django的处理流程
+**nginx + uWSGI + django的处理流程:**
 
 - 首先nginx 是对外的服务接口，外部浏览器通过url访问nginx,
 - nginx 接收到浏览器发送过来的http请求，将包进行解析，分析url，如果是静态文件请求就直接访问用户给nginx配置的静态文件目录，直接返回用户请求的静态文件，
@@ -16,8 +16,7 @@ data: 2018-06-10
   - 安全问题，程序不能直接被浏览器访问到，而是通过nginx,nginx只开放某个接口，uwsgi本身是内网接口，这样运维人员在nginx上加上安全性的限制，可以达到保护程序的作用。
   - 负载均衡问题，一个uwsgi很可能不够用，即使开了多个work也是不行，毕竟一台机器的cpu和内存都是有限的，有了nginx做代理，一个nginx可以代理多台uwsgi完成uwsgi的负载均衡。
   - 静态文件问题，用django或是uwsgi这种东西来负责静态文件的处理是很浪费的行为，而且他们本身对文件的处理也不如nginx好，所以整个静态文件的处理都直接由nginx完成，静态文件的访问完全不去经过uwsgi以及其后面的东西。
-
-uWSGI是一个Web服务器，它实现了WSGI协议、uwsgi、http等协议。Nginx中HttpUwsgiModule的作用是与uWSGI服务器进行交换。
+- uWSGI是一个Web服务器，它实现了WSGI协议、uwsgi、http等协议。Nginx中HttpUwsgiModule的作用是与uWSGI服务器进行交换。
 
 ### 1. 安装MariaDB
 
@@ -75,7 +74,7 @@ mysql -u root -p
 
 ### 3. 开启远程连接
 
-在mysql数据库中的user表中可以看到默认是只能本地连接的，所有可以添加一个新的用户，该用户可以远程访问
+- 在mysql数据库中的user表中可以看到默认是只能本地连接的，所有可以添加一个新的用户，该用户可以远程访问
 
 #### 3-1. 创建用户
 
@@ -119,7 +118,7 @@ mysql -u root -p
 
 ### 4. 安装python3.6
 
-在centos中(**Linux系统**)，系统默认只提供python2.7的版本，但是项目我们使用的python3.6的版本
+- 在centos中(**Linux系统**)，系统默认只提供python2.7的版本，但是项目我们使用的python3.6的版本
 
 所以我们自己安装python3
 
@@ -209,7 +208,7 @@ Django框架仅在开发模式下提供静态文件服务。当我开启DEBUG模
 
 #### 6-1. 测试环境中部署方式
 
-在测试环境中一般都直接使用python manage.py runserver的方式去运行项目。其中就涉及到DEBUG=False的修改，静态目录的修改等，具体修改如下：
+- 在测试环境中一般都直接使用python manage.py runserver的方式去运行项目。其中就涉及到DEBUG=False的修改，静态目录的修改等，具体修改如下：
 
 ```
 修改settings.py配置文件中的DEBUG=False模式，修改ALLOEWD_HOST=['*']
@@ -235,7 +234,7 @@ urlpatterns = [
 
 #### 6-2. 正式环境中部署方式
 
-正式环境中部署为nginx+uwsgi来部署django项目
+- 正式环境中部署为nginx+uwsgi来部署django项目
 
 ##### 6-2-1. 安装nginx
 
@@ -314,7 +313,7 @@ ln -s /usr/local/python3/bin/uwsgi /usr/bin/uwsgi
 
 ![图](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_project_mulu.png?raw=true)
 
-其中：
+**其中：**
 
 conf是配置文件，用于存放项目的nginx.conf文件，uwsgi.ini文件
 
@@ -366,7 +365,7 @@ systemctl restart nginx
 
 如果自定义的axfnginx.conf文件没有错误的话，查看nginx的运行状态会有如下的结果：
 
-![图](img/django_centos_nginx_status.png)
+![图](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_nginx_status.png?raw=true)
 
 #### 6-4-2. 配置uwsgi文件
 
