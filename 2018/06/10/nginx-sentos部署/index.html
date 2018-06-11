@@ -19,9 +19,9 @@
 <meta property="og:image" content="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_uwsgi.png?raw=true">
 <meta property="og:image" content="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_project_mulu.png?raw=true">
 <meta property="og:image" content="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_nginx_peizhi.png?raw=true">
-<meta property="og:image" content="http://yoursite.com/2018/06/10/nginx-sentos部署/img/django_centos_nginx_status.png">
+<meta property="og:image" content="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_nginx_status.png?raw=true">
 <meta property="og:image" content="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/nginx-uwsgi-port.png?raw=true">
-<meta property="og:updated_time" content="2018-06-11T17:05:09.242Z">
+<meta property="og:updated_time" content="2018-06-11T17:08:04.214Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用centos部署django项目">
 <meta name="twitter:description" content="nginx + uWSGI + django的处理流程:  首先nginx 是对外的服务接口，外部浏览器通过url访问nginx, nginx 接收到浏览器发送过来的http请求，将包进行解析，分析url，如果是静态文件请求就直接访问用户给nginx配置的静态文件目录，直接返回用户请求的静态文件， 如果不是静态文件，而是一个动态的请求，那么nginx就将请求转发给uwsgi,uwsgi 接收到请求">
@@ -316,7 +316,7 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart nginx</span><br></pre></td></tr></table></figure>
 <p>如果自定义的axfnginx.conf文件没有错误的话，查看nginx的运行状态会有如下的结果：</p>
-<p><img src="img/django_centos_nginx_status.png" alt="图"></p>
+<p><img src="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_nginx_status.png?raw=true" alt="图"></p>
 <h4 id="6-4-2-配置uwsgi文件"><a href="#6-4-2-配置uwsgi文件" class="headerlink" title="6-4-2. 配置uwsgi文件"></a>6-4-2. 配置uwsgi文件</h4><ul>
 <li>在conf文件夹下除了包含自定义的axfnginx.conf文件，还有我们定义的uwsgi.ini文件</li>
 </ul>
