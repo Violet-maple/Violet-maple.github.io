@@ -176,7 +176,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="nginx-uWSGI-django的处理流程"><a href="#nginx-uWSGI-django的处理流程" class="headerlink" title="nginx + uWSGI + django的处理流程"></a>nginx + uWSGI + django的处理流程</h4><ul>
+        <p><strong>nginx + uWSGI + django的处理流程:</strong></p>
+<ul>
 <li>首先nginx 是对外的服务接口，外部浏览器通过url访问nginx,</li>
 <li>nginx 接收到浏览器发送过来的http请求，将包进行解析，分析url，如果是静态文件请求就直接访问用户给nginx配置的静态文件目录，直接返回用户请求的静态文件，</li>
 <li>如果不是静态文件，而是一个动态的请求，那么nginx就将请求转发给uwsgi,uwsgi 接收到请求之后将包进行处理，处理成wsgi可以接受的格式，并发给wsgi,wsgi 根据请求调用应用程序的某个文件，某个文件的某个函数，最后处理完将返回值再次交给wsgi,wsgi将返回值进行打包，打包成uwsgi能够接收的格式，uwsgi接收wsgi发送的请求，并转发给nginx,nginx最终将返回值返回给浏览器。</li>

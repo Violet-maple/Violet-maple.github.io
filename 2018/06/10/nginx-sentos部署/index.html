@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>使用centos部署django项目 | master-yu 博客-主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="nginx + uWSGI + django的处理流程 首先nginx 是对外的服务接口，外部浏览器通过url访问nginx, nginx 接收到浏览器发送过来的http请求，将包进行解析，分析url，如果是静态文件请求就直接访问用户给nginx配置的静态文件目录，直接返回用户请求的静态文件， 如果不是静态文件，而是一个动态的请求，那么nginx就将请求转发给uwsgi,uwsgi 接收到请求之后">
+  <meta name="description" content="nginx + uWSGI + django的处理流程:  首先nginx 是对外的服务接口，外部浏览器通过url访问nginx, nginx 接收到浏览器发送过来的http请求，将包进行解析，分析url，如果是静态文件请求就直接访问用户给nginx配置的静态文件目录，直接返回用户请求的静态文件， 如果不是静态文件，而是一个动态的请求，那么nginx就将请求转发给uwsgi,uwsgi 接收到请求">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用centos部署django项目">
 <meta property="og:url" content="http://yoursite.com/2018/06/10/nginx-sentos部署/index.html">
 <meta property="og:site_name" content="master-yu 博客-主页">
-<meta property="og:description" content="nginx + uWSGI + django的处理流程 首先nginx 是对外的服务接口，外部浏览器通过url访问nginx, nginx 接收到浏览器发送过来的http请求，将包进行解析，分析url，如果是静态文件请求就直接访问用户给nginx配置的静态文件目录，直接返回用户请求的静态文件， 如果不是静态文件，而是一个动态的请求，那么nginx就将请求转发给uwsgi,uwsgi 接收到请求之后">
+<meta property="og:description" content="nginx + uWSGI + django的处理流程:  首先nginx 是对外的服务接口，外部浏览器通过url访问nginx, nginx 接收到浏览器发送过来的http请求，将包进行解析，分析url，如果是静态文件请求就直接访问用户给nginx配置的静态文件目录，直接返回用户请求的静态文件， 如果不是静态文件，而是一个动态的请求，那么nginx就将请求转发给uwsgi,uwsgi 接收到请求">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_nginx.png?raw=true">
 <meta property="og:image" content="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_uwsgi.png?raw=true">
@@ -21,10 +21,10 @@
 <meta property="og:image" content="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_nginx_peizhi.png?raw=true">
 <meta property="og:image" content="http://yoursite.com/2018/06/10/nginx-sentos部署/img/django_centos_nginx_status.png">
 <meta property="og:image" content="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/nginx-uwsgi-port.png?raw=true">
-<meta property="og:updated_time" content="2018-06-11T16:59:20.176Z">
+<meta property="og:updated_time" content="2018-06-11T17:05:09.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用centos部署django项目">
-<meta name="twitter:description" content="nginx + uWSGI + django的处理流程 首先nginx 是对外的服务接口，外部浏览器通过url访问nginx, nginx 接收到浏览器发送过来的http请求，将包进行解析，分析url，如果是静态文件请求就直接访问用户给nginx配置的静态文件目录，直接返回用户请求的静态文件， 如果不是静态文件，而是一个动态的请求，那么nginx就将请求转发给uwsgi,uwsgi 接收到请求之后">
+<meta name="twitter:description" content="nginx + uWSGI + django的处理流程:  首先nginx 是对外的服务接口，外部浏览器通过url访问nginx, nginx 接收到浏览器发送过来的http请求，将包进行解析，分析url，如果是静态文件请求就直接访问用户给nginx配置的静态文件目录，直接返回用户请求的静态文件， 如果不是静态文件，而是一个动态的请求，那么nginx就将请求转发给uwsgi,uwsgi 接收到请求">
 <meta name="twitter:image" content="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_nginx.png?raw=true">
   
     <link rel="alternative" href="/atom.xml" title="master-yu 博客-主页" type="application/atom+xml">
@@ -185,7 +185,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="nginx-uWSGI-django的处理流程"><a href="#nginx-uWSGI-django的处理流程" class="headerlink" title="nginx + uWSGI + django的处理流程"></a>nginx + uWSGI + django的处理流程</h4><ul>
+        <p><strong>nginx + uWSGI + django的处理流程:</strong></p>
+<ul>
 <li>首先nginx 是对外的服务接口，外部浏览器通过url访问nginx,</li>
 <li>nginx 接收到浏览器发送过来的http请求，将包进行解析，分析url，如果是静态文件请求就直接访问用户给nginx配置的静态文件目录，直接返回用户请求的静态文件，</li>
 <li>如果不是静态文件，而是一个动态的请求，那么nginx就将请求转发给uwsgi,uwsgi 接收到请求之后将包进行处理，处理成wsgi可以接受的格式，并发给wsgi,wsgi 根据请求调用应用程序的某个文件，某个文件的某个函数，最后处理完将返回值再次交给wsgi,wsgi将返回值进行打包，打包成uwsgi能够接收的格式，uwsgi接收wsgi发送的请求，并转发给nginx,nginx最终将返回值返回给浏览器。</li>
@@ -198,8 +199,8 @@
 <li>静态文件问题，用django或是uwsgi这种东西来负责静态文件的处理是很浪费的行为，而且他们本身对文件的处理也不如nginx好，所以整个静态文件的处理都直接由nginx完成，静态文件的访问完全不去经过uwsgi以及其后面的东西。</li>
 </ul>
 </li>
+<li>uWSGI是一个Web服务器，它实现了WSGI协议、uwsgi、http等协议。Nginx中HttpUwsgiModule的作用是与uWSGI服务器进行交换。</li>
 </ul>
-<p>uWSGI是一个Web服务器，它实现了WSGI协议、uwsgi、http等协议。Nginx中HttpUwsgiModule的作用是与uWSGI服务器进行交换。</p>
 <h3 id="1-安装MariaDB"><a href="#1-安装MariaDB" class="headerlink" title="1. 安装MariaDB"></a>1. 安装MariaDB</h3><ul>
 <li>安装命令</li>
 </ul>
@@ -222,7 +223,9 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set root password? [Y/n] &lt;– 是否设置root用户密码，输入y并回车或直接回车</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">New password: &lt;– 设置root用户的密码</span><br><span class="line">Re-enter new password: &lt;– 再输入一次你设置的密码</span><br><span class="line"></span><br><span class="line">其他配置</span><br><span class="line"></span><br><span class="line">Remove anonymous users? [Y/n] &lt;– 是否删除匿名用户，回车或者n回车</span><br><span class="line"></span><br><span class="line">Disallow root login remotely? [Y/n] &lt;–是否禁止root远程登录,回车 n回车</span><br><span class="line"></span><br><span class="line">Remove test database and access to it? [Y/n] &lt;– 是否删除test数据库，回车 n回车</span><br><span class="line"></span><br><span class="line">Reload privilege tables now? [Y/n] &lt;– 是否重新加载权限表，回车 y回车</span><br><span class="line"></span><br><span class="line">初始化MariaDB完成，接下来测试登录</span><br><span class="line"></span><br><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
-<h3 id="3-开启远程连接"><a href="#3-开启远程连接" class="headerlink" title="3. 开启远程连接"></a>3. 开启远程连接</h3><p>在mysql数据库中的user表中可以看到默认是只能本地连接的，所有可以添加一个新的用户，该用户可以远程访问</p>
+<h3 id="3-开启远程连接"><a href="#3-开启远程连接" class="headerlink" title="3. 开启远程连接"></a>3. 开启远程连接</h3><ul>
+<li>在mysql数据库中的user表中可以看到默认是只能本地连接的，所有可以添加一个新的用户，该用户可以远程访问</li>
+</ul>
 <h4 id="3-1-创建用户"><a href="#3-1-创建用户" class="headerlink" title="3-1. 创建用户"></a>3-1. 创建用户</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 先使用数据库</span><br><span class="line">use mysql;</span><br><span class="line"></span><br><span class="line"># 针对ip</span><br><span class="line">create user &apos;root&apos;@&apos;192.168.10.10&apos; identified by &apos;password&apos;;</span><br><span class="line"></span><br><span class="line">#全部</span><br><span class="line"> create user &apos;root&apos;@&apos;%&apos; identified by &apos;password&apos;;</span><br></pre></td></tr></table></figure>
 <h4 id="3-2-授权"><a href="#3-2-授权" class="headerlink" title="3-2. 授权"></a>3-2. 授权</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 给用户最大权限</span><br><span class="line">grant all privileges on *.* to &apos;root&apos;@&apos;%&apos; identified by &apos;password&apos;;</span><br><span class="line"></span><br><span class="line"># 给部分权限(test 数据库)</span><br><span class="line">grant all privileges on test.* to &apos;root&apos;@&apos;%&apos; identified by &apos;password&apos; with grant option;</span><br></pre></td></tr></table></figure>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 刷新权限表</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
@@ -231,7 +234,9 @@
 <li>接下来就可以在远程的数据库可视化工具中直接访问该服务器中的mysql了。</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 访问数据库</span><br><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
-<h3 id="4-安装python3-6"><a href="#4-安装python3-6" class="headerlink" title="4. 安装python3.6"></a>4. 安装python3.6</h3><p>在centos中(<strong>Linux系统</strong>)，系统默认只提供python2.7的版本，但是项目我们使用的python3.6的版本</p>
+<h3 id="4-安装python3-6"><a href="#4-安装python3-6" class="headerlink" title="4. 安装python3.6"></a>4. 安装python3.6</h3><ul>
+<li>在centos中(<strong>Linux系统</strong>)，系统默认只提供python2.7的版本，但是项目我们使用的python3.6的版本</li>
+</ul>
 <p>所以我们自己安装python3</p>
 <h4 id="4-1-安装Python3的方法"><a href="#4-1-安装Python3的方法" class="headerlink" title="4-1. 安装Python3的方法"></a>4-1. 安装Python3的方法</h4><ul>
 <li>首先安装依赖包</li>
@@ -257,12 +262,16 @@
 <p>Django的项目中，在工程目录下settings.py文件中有一个DEBUG=True参数，如果DEBUG=False则会出现js,css，img无法加载的情况出现。</p>
 <p><strong>原因如下：</strong></p>
 <p>Django框架仅在开发模式下提供静态文件服务。当我开启DEBUG模式时，Django内置的服务器是提供静态文件的服务的，所以css等文件访问都没有问题，但是关闭DEBUG模式后，Django便不提供静态文件服务了。想一想这是符合Django的哲学的：这部分事情标准服务器都很擅长，就让服务器去做吧！</p>
-<h4 id="6-1-测试环境中部署方式"><a href="#6-1-测试环境中部署方式" class="headerlink" title="6-1. 测试环境中部署方式"></a>6-1. 测试环境中部署方式</h4><p>在测试环境中一般都直接使用python manage.py runserver的方式去运行项目。其中就涉及到DEBUG=False的修改，静态目录的修改等，具体修改如下：</p>
+<h4 id="6-1-测试环境中部署方式"><a href="#6-1-测试环境中部署方式" class="headerlink" title="6-1. 测试环境中部署方式"></a>6-1. 测试环境中部署方式</h4><ul>
+<li>在测试环境中一般都直接使用python manage.py runserver的方式去运行项目。其中就涉及到DEBUG=False的修改，静态目录的修改等，具体修改如下：</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">修改settings.py配置文件中的DEBUG=False模式，修改ALLOEWD_HOST=[&apos;*&apos;]</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">修改工程目录下的urls.py, 先导入serve</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from django.views.static import serve</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">    url(r&apos;^admin/&apos;, admin.site.urls),</span><br><span class="line">    url(r&apos;^axf/&apos;, include(&apos;axf.urls&apos;, namespace=&apos;axf&apos;)),</span><br><span class="line">	# 增加以下的url路由</span><br><span class="line">    url(r&apos;^static/(?P&lt;path&gt;.*)$&apos;, serve, &#123;&quot;document_root&quot;: settings.STATICFILES_DIRS[0]&#125;),</span><br><span class="line">    url(r&apos;^$&apos;, views.home)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<h4 id="6-2-正式环境中部署方式"><a href="#6-2-正式环境中部署方式" class="headerlink" title="6-2. 正式环境中部署方式"></a>6-2. 正式环境中部署方式</h4><p>正式环境中部署为nginx+uwsgi来部署django项目</p>
+<h4 id="6-2-正式环境中部署方式"><a href="#6-2-正式环境中部署方式" class="headerlink" title="6-2. 正式环境中部署方式"></a>6-2. 正式环境中部署方式</h4><ul>
+<li>正式环境中部署为nginx+uwsgi来部署django项目</li>
+</ul>
 <h5 id="6-2-1-安装nginx"><a href="#6-2-1-安装nginx" class="headerlink" title="6-2-1. 安装nginx"></a>6-2-1. 安装nginx</h5><p>a）添加nginx存储库</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release</span><br></pre></td></tr></table></figure>
 <p>b) 安装nginx</p>
@@ -291,7 +300,7 @@
 <h4 id="6-4-配置项目代码，配置项目nginx，配置uwsgi-ini等"><a href="#6-4-配置项目代码，配置项目nginx，配置uwsgi-ini等" class="headerlink" title="6-4. 配置项目代码，配置项目nginx，配置uwsgi.ini等"></a>6-4. 配置项目代码，配置项目nginx，配置uwsgi.ini等</h4><p>本案例的配置文件，都习惯将每一个项目的配置文件，日志文件，虚拟环境放在一起，这样开发方便，运维也方便维护</p>
 <p>项目的目录结构如下：</p>
 <p><img src="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_project_mulu.png?raw=true" alt="图"></p>
-<p>其中：</p>
+<p><strong>其中：</strong></p>
 <p>conf是配置文件，用于存放项目的nginx.conf文件，uwsgi.ini文件</p>
 <p>logs是日志文件，用于存放nginx的启动成功和失败文件，以及uwsgi的运行日志文件</p>
 <p>env是用于存放虚拟环境</p>
