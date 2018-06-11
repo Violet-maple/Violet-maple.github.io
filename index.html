@@ -156,6 +156,60 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-nginx-sentos部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="nginx-uWSGI-django的处理流程"><a href="#nginx-uWSGI-django的处理流程" class="headerlink" title="nginx + uWSGI + django的处理流程"></a>nginx + uWSGI + django的处理流程</h4><ul>
+<li>首先nginx 是对外的服务接口，外部浏览器通过url访问nginx,</li>
+<li>nginx 接收到浏览器发送过来的http请求，将包进行解析，分析url，如果是静态文件请求就直接访问用户给nginx配置的静态文件目录，直接返回用户请求的静态文件，</li>
+<li>如果不是静态文件，而是一个动态的请求，那么nginx就将请求转发给uwsgi,uwsgi 接收到请求之后将包进行处理，处理成wsgi可以接受的格式，并发给wsgi,wsgi 根据请求调用应用程序的某个文件，某个文件的某个函数，最后处理完将返回值再次交给wsgi,wsgi将返回值进行打包，打包成uwsgi能够接收的格式，uwsgi接收wsgi发送的请求，并转发给nginx,nginx最终将返回值返回给浏览器。</li>
+</ul>
+        
+          <a class="article-more-a" href="/2018/06/12/nginx-sentos部署/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/12/nginx-sentos部署/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-关于django的简单运用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -755,7 +809,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;第一次做博客网页&lt;br&gt;谢谢大家指正&lt;br&gt;&lt;br&gt; 飞 &amp;nbsp; https://github.com/coco369 &lt;br&gt; 昊 &amp;nbsp; https://github.com/jackfrued &lt;br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;第一次做博客网页&lt;br&gt;谢谢大家指正&lt;br&gt;&lt;br&gt; 老王 &amp;nbsp;&amp;nbsp; https://github.com/coco369 &lt;br&gt; 老骆 &amp;nbsp;&amp;nbsp; https://github.com/jackfrued &lt;br&gt; python&amp;nbsp;https://github.com/Python3WebSpider &lt;br&gt;</div>
   	  	
     	</section>
     
