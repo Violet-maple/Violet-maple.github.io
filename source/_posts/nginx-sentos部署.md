@@ -288,7 +288,7 @@ sudo firewall-cmd --reload
 
 运行结果如下:
 
-![图](img/django_centos_nginx.png)
+![图](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_nginx.png?raw=true)
 
 #### 6-3. 配置uwsgi
 
@@ -304,7 +304,7 @@ pip3 install uwsgi
 ln -s /usr/local/python3/bin/uwsgi /usr/bin/uwsgi
 ```
 
-![图](img/django_centos_uwsgi.png)
+![图](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_uwsgi.png?raw=true)
 
 #### 6-4. 配置项目代码，配置项目nginx，配置uwsgi.ini等
 
@@ -312,7 +312,7 @@ ln -s /usr/local/python3/bin/uwsgi /usr/bin/uwsgi
 
 项目的目录结构如下：
 
-![图](img/django_centos_project_mulu.png)
+![图](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_project_mulu.png?raw=true)
 
 其中：
 
@@ -356,7 +356,7 @@ server {
 
 总的nginx配置文件在：/etc/nginx/nginx.conf中
 
-![图](img/django_centos_nginx_peizhi.png)
+![图](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_nginx_peizhi.png?raw=true)
 
 - 以上步骤操作完成以后，需要重启nginx：
 
@@ -403,7 +403,7 @@ uwsgi --ini uwsgi.ini
 
 - 启用几次后, 端口容易被占 如下:
 
-![图](img/nginx-uwsgi-port.png)
+![图](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/nginx-uwsgi-port.png?raw=true)
 
 ```
 netstat -lntp     # 查看端口号
@@ -411,3 +411,4 @@ killall -9 uwsgi  # 结束所有的uwsgi 占用的端口号
 ```
 
 - 再运行上述uwsgi  --ini uwsgi.ini 则成功了
+
