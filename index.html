@@ -156,6 +156,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-sentos-nginx-wsgi-部署多个项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/sentos-nginx-wsgi-部署多个项目/">sentos-nginx-uwsgi-部署多个项目</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/23/sentos-nginx-wsgi-部署多个项目/" class="archive-article-date">
+  	<time datetime="2018-06-23T08:44:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>本次实现两个项目站点的部署:</strong></p>
+<ul>
+<li>一个django项目</li>
+<li>另一个是flask项目</li>
+</ul>
+<p>nginx + uwsgi 的处理流程, 在上一个页面介绍过, 此处不过多叙述, 需要了解 <a href="https://violet-maple.github.io/2018/06/10/nginx-sentos部署/#more" target="_blank" rel="noopener">点击此处</a> 连接</p>
+        
+          <a class="article-more-a" href="/2018/06/23/sentos-nginx-wsgi-部署多个项目/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/23/sentos-nginx-wsgi-部署多个项目/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-nginx-sentos部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -176,7 +246,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>nginx + uWSGI + django的处理流程:</strong></p>
+        <p><strong>nginx + uwsgi + django的处理流程:</strong></p>
 <ul>
 <li>首先nginx 是对外的服务接口，外部浏览器通过url访问nginx,</li>
 <li>nginx 接收到浏览器发送过来的http请求，将包进行解析，分析url，如果是静态文件请求就直接访问用户给nginx配置的静态文件目录，直接返回用户请求的静态文件，</li>
@@ -661,6 +731,23 @@
     	<div class="footer-left">
     		&copy; 2018 master_yu
     	</div>
+
+    	<!--统计start-->
+      <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+      </script>
+      <span id="busuanzi_container_site_pv">总访问量
+        <span id="busuanzi_value_site_pv"></span>次
+  		</span>
+
+      <span id="busuanzi_container_page_pv">本文阅读量
+        <span id="busuanzi_value_page_pv"></span>人次
+      </span>
+
+      <span id="busuanzi_container_site_uv">访客数
+        <span id="busuanzi_value_site_uv"></span>人次
+  		</span>
+      <!--统计end-->
+
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div>

@@ -6,19 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>关于环境的建立 | master-yu 博客-主页</title>
+  <title>sentos-nginx-uwsgi-部署多个项目 | master-yu 博客-主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 创建虚拟环境 创建独立干净的虚拟环境   进入命令行模式输入:">
+  <meta name="description" content="本次实现两个项目站点的部署:  一个django项目 另一个是flask项目  nginx + uwsgi 的处理流程, 在上一个页面介绍过, 此处不过多叙述, 需要了解 点击此处 连接">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于环境的建立">
-<meta property="og:url" content="http://yoursite.com/2018/05/28/study44/index.html">
+<meta property="og:title" content="sentos-nginx-uwsgi-部署多个项目">
+<meta property="og:url" content="http://yoursite.com/2018/06/23/sentos-nginx-wsgi-部署多个项目/index.html">
 <meta property="og:site_name" content="master-yu 博客-主页">
-<meta property="og:description" content="1. 创建虚拟环境 创建独立干净的虚拟环境   进入命令行模式输入:">
+<meta property="og:description" content="本次实现两个项目站点的部署:  一个django项目 另一个是flask项目  nginx + uwsgi 的处理流程, 在上一个页面介绍过, 此处不过多叙述, 需要了解 点击此处 连接">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-02T17:11:02.201Z">
+<meta property="og:image" content="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_nginx.png?raw=true">
+<meta property="og:image" content="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_uwsgi.png?raw=true">
+<meta property="og:image" content="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_project_mulu.png?raw=true">
+<meta property="og:image" content="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_nginx_peizhi.png?raw=true">
+<meta property="og:image" content="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_nginx_status.png?raw=true">
+<meta property="og:image" content="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/nginx-uwsgi-port.png?raw=true">
+<meta property="og:updated_time" content="2018-06-24T18:05:12.785Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于环境的建立">
-<meta name="twitter:description" content="1. 创建虚拟环境 创建独立干净的虚拟环境   进入命令行模式输入:">
+<meta name="twitter:title" content="sentos-nginx-uwsgi-部署多个项目">
+<meta name="twitter:description" content="本次实现两个项目站点的部署:  一个django项目 另一个是flask项目  nginx + uwsgi 的处理流程, 在上一个页面介绍过, 此处不过多叙述, 需要了解 点击此处 连接">
+<meta name="twitter:image" content="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_nginx.png?raw=true">
   
     <link rel="alternative" href="/atom.xml" title="master-yu 博客-主页" type="application/atom+xml">
   
@@ -158,84 +165,208 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-study44" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-sentos-nginx-wsgi-部署多个项目" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      关于环境的建立
+      sentos-nginx-uwsgi-部署多个项目
     </h1>
   
 
         
-        <a href="/2018/05/28/study44/" class="archive-article-date">
-  	<time datetime="2018-05-28T15:51:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-28</time>
+        <a href="/2018/06/23/sentos-nginx-wsgi-部署多个项目/" class="archive-article-date">
+  	<time datetime="2018-06-23T08:44:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-创建虚拟环境"><a href="#1-创建虚拟环境" class="headerlink" title="1. 创建虚拟环境"></a>1. 创建虚拟环境</h3><ul>
-<li>创建独立干净的虚拟环境</li>
-</ul>
+        <p><strong>本次实现两个项目站点的部署:</strong></p>
 <ul>
-<li>进入命令行模式输入:</li>
+<li>一个django项目</li>
+<li>另一个是flask项目</li>
 </ul>
+<p>nginx + uwsgi 的处理流程, 在上一个页面介绍过, 此处不过多叙述, 需要了解 <a href="https://violet-maple.github.io/2018/06/10/nginx-sentos部署/#more" target="_blank" rel="noopener">点击此处</a> 连接</p>
 <a id="more"></a>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip instatll virtualenv               <span class="comment"># 安装virtualenv软件</span></span><br><span class="line">virtualenv --no-site-packages venv    <span class="comment"># 建一个独立干净环境</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-安装MariaDB"><a href="#1-安装MariaDB" class="headerlink" title="1. 安装MariaDB"></a>1. 安装MariaDB</h3><ul>
+<li>安装命令</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install mariadb mariadb-server</span><br></pre></td></tr></table></figure>
 <ul>
-<li>查看pip安装过包的版本</li>
+<li>安装完成MariaDB，首先启动MariaDB</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip freeze</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mariadb</span><br></pre></td></tr></table></figure>
 <ul>
-<li>查看所有安装过的包</li>
+<li>设置开机启动</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable mariadb</span><br></pre></td></tr></table></figure>
+<h3 id="2-设置密码"><a href="#2-设置密码" class="headerlink" title="2. 设置密码"></a>2. 设置密码</h3><ul>
+<li>命令: </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span><br></pre></td></tr></table></figure>
 <ul>
-<li>先装一下库：</li>
+<li>Enter current password for root:&lt;–初次运行直接回车</li>
+<li>设置密码</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install django==<span class="number">1.11</span>   <span class="comment"># 指定1.11版本  默认是最新版</span></span><br><span class="line">pip install pymysql        <span class="comment"># 装python模块 pymysql</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-创建项目并且运行"><a href="#2-创建项目并且运行" class="headerlink" title="2. 创建项目并且运行"></a>2. 创建项目并且运行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">django-amdin startproject day1</span><br><span class="line">python manage.py startapp app</span><br><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
-<h3 id="3-配置pymysql"><a href="#3-配置pymysql" class="headerlink" title="3. 配置pymysql"></a>3. 配置pymysql</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import pymysql</span><br><span class="line">pymysql.install_as_MySQLdb()</span><br></pre></td></tr></table></figure>
-<h3 id="4-url反向解析"><a href="#4-url反向解析" class="headerlink" title="4. url反向解析"></a>4. url反向解析</h3><ul>
-<li>html页面的解析</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set root password? [Y/n] &lt;– 是否设置root用户密码，输入y并回车或直接回车</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">New password: &lt;– 设置root用户的密码</span><br><span class="line">Re-enter new password: &lt;– 再输入一次你设置的密码</span><br><span class="line"></span><br><span class="line">其他配置</span><br><span class="line"></span><br><span class="line">Remove anonymous users? [Y/n] &lt;– 是否删除匿名用户，回车或者n回车</span><br><span class="line"></span><br><span class="line">Disallow root login remotely? [Y/n] &lt;–是否禁止root远程登录,回车 n回车</span><br><span class="line"></span><br><span class="line">Remove test database and access to it? [Y/n] &lt;– 是否删除test数据库，回车 n回车</span><br><span class="line"></span><br><span class="line">Reload privilege tables now? [Y/n] &lt;– 是否重新加载权限表，回车 y回车</span><br><span class="line"></span><br><span class="line">初始化MariaDB完成，接下来测试登录</span><br><span class="line"></span><br><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+<h3 id="3-开启远程连接"><a href="#3-开启远程连接" class="headerlink" title="3. 开启远程连接"></a>3. 开启远程连接</h3><ul>
+<li>在mysql数据库中的user表中可以看到默认是只能本地连接的，所有可以添加一个新的用户，该用户可以远程访问</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">src = '/app/left/'                    # 绝对路径</span><br><span class="line">src = "&#123;% url 'namespace:name' %&#125;"    # 动态路径  方便更改</span><br></pre></td></tr></table></figure>
-<h3 id="5-静态解析"><a href="#5-静态解析" class="headerlink" title="5. 静态解析"></a>5. 静态解析</h3><ul>
-<li>方法一:</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">'/statc/img/xxx.css'</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-1-创建用户"><a href="#3-1-创建用户" class="headerlink" title="3-1. 创建用户"></a>3-1. 创建用户</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 先使用数据库</span><br><span class="line">use mysql;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 针对ip</span><br><span class="line">create user 'root'@'192.168.10.10' identified by 'password';</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>全部</span><br><span class="line"> create user 'root'@'%' identified by 'password';</span><br></pre></td></tr></table></figure>
+<h4 id="3-2-授权"><a href="#3-2-授权" class="headerlink" title="3-2. 授权"></a>3-2. 授权</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 给用户最大权限</span><br><span class="line">grant all privileges on *.* to 'root'@'%' identified by 'password';</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 给部分权限(test 数据库)</span><br><span class="line">grant all privileges on test.* to 'root'@'%' identified by 'password' with grant option;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 刷新权限表</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 查看</span><br><span class="line">show grants for 'root'@'localhost';</span><br></pre></td></tr></table></figure>
 <ul>
-<li>方法二:</li>
+<li>接下来就可以在远程的数据库可视化工具中直接访问该服务器中的mysql了。</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% load static %&#125;   # 要先加载一下</span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">'&#123;% static "img/xxx.css" %&#125;'</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="6-过滤器-‘-’"><a href="#6-过滤器-‘-’" class="headerlink" title="6. 过滤器 ‘|’"></a>6. 过滤器 ‘|’</h3><ul>
-<li>lower </li>
-<li>upper</li>
-<li>date:y-m-d h:m:s</li>
-<li>add:1 </li>
-<li>add:-1</li>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 访问数据库</span><br><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+<h3 id="4-安装python3-6"><a href="#4-安装python3-6" class="headerlink" title="4. 安装python3.6"></a>4. 安装python3.6</h3><ul>
+<li>在centos中(<strong>Linux系统</strong>)，系统默认只提供python2.7的版本，但是项目我们使用的python3.6的版本</li>
 </ul>
-<h3 id="7-get和filter区别"><a href="#7-get和filter区别" class="headerlink" title="7. get和filter区别"></a>7. get和filter区别</h3><ul>
-<li>get一定要确定能获取到唯一一个对象</li>
-<li>filter：能获取很多对象，queryset</li>
-<li>first():获取第一个</li>
-<li>[:1]</li>
-<li>last()：获取最后一个</li>
+<p>所以我们自己安装python3</p>
+<h4 id="4-1-安装Python3的方法"><a href="#4-1-安装Python3的方法" class="headerlink" title="4-1. 安装Python3的方法"></a>4-1. 安装Python3的方法</h4><ul>
+<li>首先安装依赖包</li>
 </ul>
-<h3 id="8-分页"><a href="#8-分页" class="headerlink" title="8. 分页"></a>8. 分页</h3><ul>
-<li>paginator对象</li>
-<li>page_range：获取当前一共有多少页 range(1,3)</li>
-<li>page对象：</li>
-<li>通过page获取paginator对象：page.paginator</li>
-<li>has_next:是否有上一页</li>
-<li>has_previous：是否又下一页</li>
-<li>next_page_number：上一页的页码</li>
-<li>previous_page_number：下一个的页码</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y groupinstall &quot;Development tools&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel</span><br></pre></td></tr></table></figure>
+<ul>
+<li>然后根据自己需求下载不同版本的Python3，我下载的是Python3.6.4</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tar.xz</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">然后解压压缩包，进入该目录，安装Python3</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tar -xvJf  Python-3.6.4.tar.xz            # 解归档</span><br><span class="line">cd Python-3.6.4                           # 进入</span><br><span class="line">./configure --prefix=/usr/local/python3</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<p>最后创建软链接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/python3/bin/python3 /usr/bin/python3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3</span><br></pre></td></tr></table></figure>
+<h3 id="5-安装环境"><a href="#5-安装环境" class="headerlink" title="5. 安装环境"></a>5. 安装环境</h3><h4 id="5-1-安装virtualenv"><a href="#5-1-安装virtualenv" class="headerlink" title="5-1. 安装virtualenv"></a>5-1. 安装virtualenv</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install python-virtualenv</span><br></pre></td></tr></table></figure>
+<h4 id="5-2-创建虚拟环境"><a href="#5-2-创建虚拟环境" class="headerlink" title="5-2. 创建虚拟环境"></a>5-2. 创建虚拟环境</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir env      # 创建env目录 </span><br><span class="line">cd env         # 进入</span><br><span class="line">virtualenv --no-site-packages axfenv  # 创建axfenv的虚拟环境</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd axfenv</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 激活虚拟环境</span><br><span class="line">source bin/activate</span><br></pre></td></tr></table></figure>
+<h4 id="5-3-安装环境需要的包"><a href="#5-3-安装环境需要的包" class="headerlink" title="5-3. 安装环境需要的包"></a>5-3. 安装环境需要的包</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install -r re_install.txt    # 递归式安装</span><br></pre></td></tr></table></figure>
+<p>其中re_install.txt文件中记录的是需要安装包的名称以及对应的版本</p>
+<h3 id="6-站点1-django项目的部署"><a href="#6-站点1-django项目的部署" class="headerlink" title="6. 站点1-django项目的部署"></a>6. 站点1-django项目的部署</h3><p><strong>该部署采用的系统是centos7</strong></p>
+<p>Django的项目中，在工程目录下settings.py文件中有一个DEBUG=True参数，如果DEBUG=False则会出现js,css，img无法加载的情况出现。</p>
+<p><strong>原因如下：</strong></p>
+<p>Django框架仅在开发模式下提供静态文件服务。当我开启DEBUG模式时，Django内置的服务器是提供静态文件的服务的，所以css等文件访问都没有问题，但是关闭DEBUG模式后，Django便不提供静态文件服务了。想一想这是符合Django的哲学的：这部分事情标准服务器都很擅长，就让服务器去做吧！</p>
+<h4 id="6-1-测试环境中部署方式"><a href="#6-1-测试环境中部署方式" class="headerlink" title="6-1. 测试环境中部署方式"></a>6-1. 测试环境中部署方式</h4><ul>
+<li>在测试环境中一般都直接使用python manage.py runserver的方式去运行项目。其中就涉及到DEBUG=False的修改，静态目录的修改等，具体修改如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">修改settings.py配置文件中的DEBUG=False模式，修改ALLOEWD_HOST=[&apos;*&apos;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">修改工程目录下的urls.py, 先导入serve</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from django.views.static import serve</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">    url(<span class="string">r'^admin/'</span>, admin.site.urls),</span><br><span class="line">    url(<span class="string">r'^axf/'</span>, include(<span class="string">'axf.urls'</span>, namespace=<span class="string">'axf'</span>)),</span><br><span class="line">	<span class="comment"># 增加以下的url路由</span></span><br><span class="line">    url(<span class="string">r'^static/(?P&lt;path&gt;.*)$'</span>, serve, &#123;<span class="string">"document_root"</span>: settings.STATICFILES_DIRS[<span class="number">0</span>]&#125;),</span><br><span class="line">    url(<span class="string">r'^$'</span>, views.home)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h4 id="6-2-正式环境中部署方式"><a href="#6-2-正式环境中部署方式" class="headerlink" title="6-2. 正式环境中部署方式"></a>6-2. 正式环境中部署方式</h4><ul>
+<li>正式环境中部署django项目采用 nginx+uwsgi来部署</li>
+</ul>
+<h5 id="6-2-1-安装nginx"><a href="#6-2-1-安装nginx" class="headerlink" title="6-2-1. 安装nginx"></a>6-2-1. 安装nginx</h5><p>a）添加nginx存储库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release</span><br></pre></td></tr></table></figure>
+<p>b) 安装nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install nginx</span><br></pre></td></tr></table></figure>
+<p>c) 运行nginx</p>
+<ul>
+<li>Nginx不会自行启动。要运行Nginx</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start nginx</span><br></pre></td></tr></table></figure>
+<p>nginx的运行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl status nginx 查看nginx的状态</span><br><span class="line">systemctl start/stop/enable/disable nginx 启动/关闭/设置开机启动/禁止开机启动</span><br></pre></td></tr></table></figure>
+<p>d）系统启动时启用Nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable nginx</span><br></pre></td></tr></table></figure>
+<p>e）如果您正在运行防火墙，请运行以下命令以允许HTTP和HTTPS通信：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --permanent --zone=public --add-service=http</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --permanent --zone=public --add-service=https</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<p>运行结果如下:</p>
+<p><img src="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_nginx.png?raw=true" alt="图"></p>
+<h4 id="6-3-配置uwsgi"><a href="#6-3-配置uwsgi" class="headerlink" title="6-3. 配置uwsgi"></a>6-3. 配置uwsgi</h4><h5 id="6-3-1-安装uwsgi"><a href="#6-3-1-安装uwsgi" class="headerlink" title="6-3-1. 安装uwsgi"></a>6-3-1. 安装uwsgi</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install uwsgi</span><br></pre></td></tr></table></figure>
+<ul>
+<li>然后进行环境变量的配置， 建立软连接</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/python3/bin/uwsgi /usr/bin/uwsgi</span><br></pre></td></tr></table></figure>
+<p><img src="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_uwsgi.png?raw=true" alt="图"></p>
+<h4 id="6-4-配置项目代码，配置项目nginx，配置uwsgi-ini等"><a href="#6-4-配置项目代码，配置项目nginx，配置uwsgi-ini等" class="headerlink" title="6-4. 配置项目代码，配置项目nginx，配置uwsgi.ini等"></a>6-4. 配置项目代码，配置项目nginx，配置uwsgi.ini等</h4><p>配置文件，我习惯将每一个项目的配置文件，日志文件，虚拟环境放在一起，这样开发方便，运维也方便维护</p>
+<p>项目的目录结构如下：</p>
+<p><img src="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_project_mulu.png?raw=true" alt="图"></p>
+<p><strong>其中：</strong></p>
+<p>conf是配置文件，用于存放项目的nginx.conf文件，uwsgi.ini文件</p>
+<p>logs是日志文件，用于存放nginx的启动成功和失败文件，以及uwsgi的运行日志文件</p>
+<p>env是用于存放虚拟环境</p>
+<p>src是项目文件，该目录下上传的是目录代码</p>
+<h4 id="6-4-1-配置nginx-conf文件"><a href="#6-4-1-配置nginx-conf文件" class="headerlink" title="6-4-1. 配置nginx.conf文件"></a>6-4-1. 配置nginx.conf文件</h4><p><b>首先</b>：编写自己项目的nginx.conf文件如下：</p>
+<p>进入到 /home/conf 目录中., 再自己定义nginx的配置文件，如只有一个项目则可以直接命项目名, 好见名知意. 比如爱鲜蜂项目，可定义为axfnginx.conf文件; 但此文为多个项目则: 我直接命名为 nginx.conf</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">     listen       <span class="number">80</span>;</span><br><span class="line">     server_name <span class="number">47.106</span><span class="number">.189</span><span class="number">.34</span> localhost;   <span class="comment"># 或者server_name 域名;</span></span><br><span class="line"></span><br><span class="line">     access_log /home/logs/access.log;</span><br><span class="line">     error_log /home/logs/error.log;</span><br><span class="line"></span><br><span class="line">     location / &#123;</span><br><span class="line">         include uwsgi_params;</span><br><span class="line">         uwsgi_pass <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8890</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     location /static/ &#123;</span><br><span class="line">         alias /home/src/axf/static/;</span><br><span class="line">         expires <span class="number">30</span>d;</span><br><span class="line">     &#125;</span><br><span class="line">     loction /media/ &#123;</span><br><span class="line">       alias /home/src/axf/media/;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p><b>其次</b>：修改总的nginx的配置文件，让总的nginx文件包含我们自定义的nginx.conf配置文件;</p>
+<p>总的nginx配置文件在：/etc/nginx/nginx.conf中</p>
+<p><img src="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_nginx_peizhi.png?raw=true" alt="图"></p>
+<ul>
+<li>以上步骤操作完成以后，需要重启nginx：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart nginx</span><br></pre></td></tr></table></figure>
+<p>如果自定义的axfnginx.conf文件没有错误的话，查看nginx的运行状态会有如下的结果：</p>
+<p><img src="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/django_centos_nginx_status.png?raw=true" alt="图"></p>
+<h4 id="6-4-2-配置uwsgi文件"><a href="#6-4-2-配置uwsgi文件" class="headerlink" title="6-4-2. 配置uwsgi文件"></a>6-4-2. 配置uwsgi文件</h4><ul>
+<li>在conf文件夹下除了包含自定义的nginx.conf配置文件，还有我们定义的uwsgi.ini文件</li>
+<li>因为自己定义的nginx.cof配置文件可以走多个路由, 比较方便, 就设置一个, 而uwsgi.ini文件多个项目在一起较麻烦, 此处就每个项目设置一个, 所以第一个站点django项目的uwsgi文件我设置为其端口名: uwsgi-80.ini</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line">projectname = axf   <span class="comment"># 赋值</span></span><br><span class="line">base = /home/src    <span class="comment"># 赋值</span></span><br><span class="line"></span><br><span class="line">master = true       <span class="comment"># 守护进程</span></span><br><span class="line"></span><br><span class="line">processes = <span class="number">4</span>       <span class="comment"># 进程个数</span></span><br><span class="line"></span><br><span class="line">pythonhome = /home/env/axfenv    <span class="comment"># 虚拟环境</span></span><br><span class="line"></span><br><span class="line">chdir = %(base)/%(projectname)   <span class="comment"># 项目地址</span></span><br><span class="line"></span><br><span class="line">pythonpath = /usr/local/python3/bin/python3    <span class="comment"># 指定python版本</span></span><br><span class="line"></span><br><span class="line">module = %(projectname).wsgi                  <span class="comment"># 指定uwsgi文件</span></span><br><span class="line"></span><br><span class="line">socket = <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8890</span>        <span class="comment"># 和nginx通信地址:端口  (与上述本地地址一致)</span></span><br><span class="line"></span><br><span class="line">logto = /home/logs/uwsgi.log   <span class="comment"># 日志文件地址</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>运行项目:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 在建好的/home/conf文件下运行:</span><br><span class="line">uwsgi --ini uwsgi-80.ini</span><br></pre></td></tr></table></figure>
+<ul>
+<li>启用几次后, 端口容易被占 如下:</li>
+</ul>
+<p><img src="https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/nginx-uwsgi-port.png?raw=true" alt="图"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netstat -lntp     # 查看端口号</span><br><span class="line">killall -9 uwsgi  # 结束所有的uwsgi 占用的端口号</span><br></pre></td></tr></table></figure>
+<ul>
+<li>再运行上述uwsgi  –ini uwsgi-80.ini 则一个成功了</li>
+</ul>
+<h3 id="7-站点2-flask项目的部署"><a href="#7-站点2-flask项目的部署" class="headerlink" title="7. 站点2-flask项目的部署"></a>7. 站点2-flask项目的部署</h3><ul>
+<li>因为flask项目要启用redis的session, 所以先安装redis</li>
+</ul>
+<h4 id="7-1安装redis"><a href="#7-1安装redis" class="headerlink" title="7-1安装redis"></a>7-1安装redis</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install redis                  # 下载安装</span><br><span class="line">systemctl start redis.service      # 启动redis</span><br><span class="line">systemctl enable redis.service     # 设置开机自启</span><br></pre></td></tr></table></figure>
+<p>####7-2建立一个干净的第二个虚拟环境 </p>
+<ul>
+<li>新建环境</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /home/env                         # 进入环境的文件夹</span><br><span class="line">virtualenv --no-site-packages ajenv  # 建立爱家的虚拟环境</span><br><span class="line">cd ajenv/</span><br><span class="line">source bin/activate      # 激活环境</span><br></pre></td></tr></table></figure>
+<ul>
+<li>把项目又放在/home/src/  中, 进入其中安装包</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install -r reqirments.txt    # 递归式安装</span><br></pre></td></tr></table></figure>
+<p>其中reqirments.txt文件中记录的是需要安装包的名称以及对应的版本</p>
+<h4 id="7-3-测试flask项目能否在本地运行"><a href="#7-3-测试flask项目能否在本地运行" class="headerlink" title="7-3 测试flask项目能否在本地运行"></a>7-3 测试flask项目能否在本地运行</h4><ul>
+<li>直接在虚拟环境下运行命令:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 manage.py runserver -h <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span> -p <span class="number">10000</span> -d</span><br></pre></td></tr></table></figure>
+<p>若能成功说明, 上传文件配置没问题, 失败则仔细, 看看项目上传前是否能运行</p>
+<h4 id="7-4-修改自定义的配置文件"><a href="#7-4-修改自定义的配置文件" class="headerlink" title="7-4 修改自定义的配置文件"></a>7-4 修改自定义的配置文件</h4><h5 id="7-4-1-配置自定义的nginx-conf"><a href="#7-4-1-配置自定义的nginx-conf" class="headerlink" title="7-4-1 配置自定义的nginx.conf"></a>7-4-1 配置自定义的nginx.conf</h5><ul>
+<li>增加内容如下:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">     listen       <span class="number">80</span>;</span><br><span class="line">     server_name <span class="number">47.106</span><span class="number">.189</span><span class="number">.34</span> localhost;   <span class="comment"># 或者是 域名;</span></span><br><span class="line"></span><br><span class="line">     access_log /home/logs/access.log;</span><br><span class="line">     error_log /home/logs/error.log;</span><br><span class="line"></span><br><span class="line">     location / &#123;</span><br><span class="line">         include uwsgi_params;</span><br><span class="line">         uwsgi_pass <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8890</span>;  <span class="comment"># 这个端口是nginx和uwsgi交互的端口</span></span><br><span class="line">     &#125;</span><br><span class="line">     location /static/ &#123;</span><br><span class="line">         alias /home/src/axf/static/;</span><br><span class="line">         expires <span class="number">30</span>d;</span><br><span class="line">     &#125;</span><br><span class="line">     loction /media/ &#123;</span><br><span class="line">       alias /home/src/axf/media/;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment"># 增加的内容为flask项目配置法</span></span><br><span class="line">server &#123;</span><br><span class="line">    listen    <span class="number">8080</span>;</span><br><span class="line">    server_name <span class="number">47.106</span><span class="number">.189</span><span class="number">.34</span> localhost;    <span class="comment"># 或者是另一个域名 则上面listen也可以是80端口</span></span><br><span class="line"></span><br><span class="line">    access_log /home/logs/access.log;</span><br><span class="line">    error_log /home/logs/error.log;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        include uwsgi_params;</span><br><span class="line">        uwsgi_pass <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8880</span>;   <span class="comment"># 跟上面项目交互端口号一定要 不相同</span></span><br><span class="line"></span><br><span class="line">        uwsgi_param UWSGI_CHDIR /home/src/AJ;</span><br><span class="line">        uwsgi_param UWSGI_SCRIPT manage:app;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="7-4-2-配置uwsgi文件"><a href="#7-4-2-配置uwsgi文件" class="headerlink" title="7-4-2 配置uwsgi文件"></a>7-4-2 配置uwsgi文件</h5><ul>
+<li>下面uwsgi 为flask项目配置法</li>
+</ul>
+<ul>
+<li>新增加一个uwsgi-8080.ini 文件</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line"></span><br><span class="line">socket=<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8880</span>        <span class="comment"># 端口号跟上面项目2的nginx配置的本地端口号一致</span></span><br><span class="line"></span><br><span class="line">chdir=/home/src/AJ            <span class="comment"># 项目地址名</span></span><br><span class="line">pythonpath=/usr/local/python3/bin/python3   <span class="comment"># python地址</span></span><br><span class="line">pythonhome=/home/env/ajenv        <span class="comment"># 虚拟环境地址</span></span><br><span class="line"></span><br><span class="line">callable=app   </span><br><span class="line"></span><br><span class="line">logto = /home/logs/uwsgi.log  <span class="comment"># 回调的flask实例</span></span><br></pre></td></tr></table></figure>
+<h4 id="7-5-修改linux下的路径"><a href="#7-5-修改linux下的路径" class="headerlink" title="7-5 修改linux下的路径"></a>7-5 修改linux下的路径</h4><ul>
+<li>因为项目在widows下创建的, 所以</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># BASE_DIR = os.path.dirname(os.path.dirname(__file__))   # 此为widows下找到的路径</span></span><br><span class="line"><span class="comment"># 下为linux下 修改的DASE_DIR基本路径</span></span><br><span class="line">BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改好后再:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重启nginx</span></span><br><span class="line">systemctl restart nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在建好的/home/conf文件下运行:uwsgi-8080.ini 文件</span></span><br><span class="line">uwsgi --ini uwsgi<span class="number">-8080.</span>ini</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果运行成功, 则网页上公网ip 加上端口号访问了</li>
+</ul>
+<p>如果是加的域名 , 则直接访问域名即可….</p>
 
       
 
@@ -315,7 +446,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/28/study44/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/23/sentos-nginx-wsgi-部署多个项目/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -329,18 +460,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/06/02/关于django的简单运用/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          关于django项目的建立
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/05/27/django快速搭建网页/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">使用Django快速搭建网页</div>
+    <a href="/2018/06/10/nginx-sentos部署/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用centos部署django项目</div>
       <i class="icon-circle-right"></i>
     </a>
   
