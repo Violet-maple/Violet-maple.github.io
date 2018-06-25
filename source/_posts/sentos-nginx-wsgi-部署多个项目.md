@@ -17,19 +17,19 @@ nginx + uwsgi 的处理流程, 在上一个页面介绍过, 此处不过多叙�
 
 - 安装命令
 
-```
+```shell
 yum -y install mariadb mariadb-server
 ```
 
 - 安装完成MariaDB，首先启动MariaDB
 
-```
+```shell
 systemctl start mariadb
 ```
 
 - 设置开机启动
 
-```
+```shell
 systemctl enable mariadb
 ```
 
@@ -37,7 +37,7 @@ systemctl enable mariadb
 
 - 命令: 
 
-```
+```shell
 mysql_secure_installation
 ```
 
@@ -121,23 +121,21 @@ mysql -u root -p
 
 - 首先安装依赖包
 
-```
+```shell
 yum -y groupinstall "Development tools"
 ```
 
-```
+```shell
 yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
 ```
 
 - 然后根据自己需求下载不同版本的Python3，我下载的是Python3.6.4
 
-```
+```shell
 wget https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tar.xz
 ```
 
-```
-然后解压压缩包，进入该目录，安装Python3
-```
+- 然后解压压缩包，进入该目录，安装Python3
 
 ```shell
 tar -xvJf  Python-3.6.4.tar.xz            # 解归档
@@ -148,11 +146,11 @@ make && make install
 
 最后创建软链接
 
-```
+```shell
 ln -s /usr/local/python3/bin/python3 /usr/bin/python3
 ```
 
-```
+```shell
 ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
 ```
 
@@ -233,13 +231,13 @@ urlpatterns = [
 
 a）添加nginx存储库
 
-```
+```shell
 yum install epel-release
 ```
 
 b) 安装nginx
 
-```
+```shell
 yum install nginx
 ```
 
@@ -247,30 +245,30 @@ c) 运行nginx
 
 - Nginx不会自行启动。要运行Nginx
 
-```
+```shell
 systemctl start nginx
 ```
 
 nginx的运行命令：
 
-```
+```shell
  systemctl status nginx 查看nginx的状态
  systemctl start/stop/enable/disable nginx 启动/关闭/设置开机启动/禁止开机启动
 ```
 
 d）系统启动时启用Nginx
 
-```
+```shell
 systemctl enable nginx
 ```
 
 e）如果您正在运行防火墙，请运行以下命令以允许HTTP和HTTPS通信：
 
-```
+```shell
 sudo firewall-cmd --permanent --zone=public --add-service=http 
 ```
 
-```
+```shell
 sudo firewall-cmd --permanent --zone=public --add-service=https
 ```
 
@@ -286,7 +284,7 @@ sudo firewall-cmd --reload
 
 ##### 6-3-1. 安装uwsgi
 
-```
+```shell
 pip3 install uwsgi
 ```
 
@@ -322,7 +320,7 @@ src是项目文件，该目录下上传的是目录代码
 
 进入到 /home/conf 目录中., 再自己定义nginx的配置文件，如只有一个项目则可以直接命项目名, 好见名知意. 比如爱鲜蜂项目，可定义为axfnginx.conf文件; 但此文为多个项目则: 我直接命名为 nginx.conf
 
-```python
+```shell
 server {
      listen       80;
      server_name 47.106.189.34 localhost;   # 或者server_name 域名;
@@ -365,7 +363,7 @@ systemctl restart nginx
 - 在conf文件夹下除了包含自定义的nginx.conf配置文件，还有我们定义的uwsgi.ini文件
 - 因为自己定义的nginx.cof配置文件可以走多个路由, 比较方便, 就设置一个, 而uwsgi.ini文件多个项目在一起较麻烦, 此处就每个项目设置一个, 所以第一个站点django项目的uwsgi文件我设置为其端口名: uwsgi-80.ini
 
-```python
+```shell
 [uwsgi]
 projectname = axf   # 赋值
 base = /home/src    # 赋值
@@ -389,7 +387,7 @@ logto = /home/logs/uwsgi.log   # 日志文件地址
 
 - 运行项目:
 
-```
+```shell
 # 在建好的/home/conf文件下运行:
 uwsgi --ini uwsgi-80.ini
 ```
@@ -398,7 +396,7 @@ uwsgi --ini uwsgi-80.ini
 
 ![图](https://github.com/Violet-maple/Violet-maple.github.io/blob/hexo/source/_posts/img/nginx-uwsgi-port.png?raw=true)
 
-```
+```shell
 netstat -lntp     # 查看端口号
 killall -9 uwsgi  # 结束所有的uwsgi 占用的端口号
 ```
@@ -441,7 +439,7 @@ pip3 install -r reqirments.txt    # 递归式安装
 
 - 直接在虚拟环境下运行命令:
 
-```python
+```shell
 pip3 manage.py runserver -h 0.0.0.0 -p 10000 -d
 ```
 
@@ -453,7 +451,7 @@ pip3 manage.py runserver -h 0.0.0.0 -p 10000 -d
 
 - 增加内容如下:
 
-```python
+```shell
 server {
      listen       80;
      server_name 47.106.189.34 localhost;   # 或者是 域名;
