@@ -418,9 +418,9 @@ systemctl start redis.service      # 启动redis
 systemctl enable redis.service     # 设置开机自启
 ```
 
-####7-2建立一个干净的第二个虚拟环境 
+#### 7-2建立一个干净的第二个虚拟环境
 
-- 新建环境
+- 新建虚拟环境-并激活
 
 ```shell
 cd /home/env                         # 进入环境的文件夹
@@ -498,7 +498,7 @@ server {
 
 - 新增加一个uwsgi-8080.ini 文件
 
-```python
+```shell
 [uwsgi]
 
 master = true                # 守护进程 - 允许主进程存在
@@ -528,7 +528,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 - 修改好后再:
 
-```python
+```shell
 # 重启nginx
 systemctl restart nginx
 
