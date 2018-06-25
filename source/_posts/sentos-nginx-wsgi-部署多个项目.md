@@ -501,6 +501,10 @@ server {
 ```python
 [uwsgi]
 
+master = true                # 守护进程 - 允许主进程存在
+
+processes = 4                # 进程个数  (根据需求情况设定)
+
 socket=127.0.0.1:8880        # 端口号跟上面项目2的nginx配置的本地端口号一致
 
 chdir=/home/src/AJ            # 项目地址名
@@ -510,7 +514,6 @@ pythonhome=/home/env/ajenv        # 虚拟环境地址
 callable=app   
 
 logto = /home/logs/uwsgi.log  # 回调的flask实例
-
 ```
 
 #### 7-5 修改linux下的路径
