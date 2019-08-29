@@ -159,9 +159,24 @@
     <article id="post-国内镜像pip安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/21/国内镜像pip安装/">镜像使用</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/21/国内镜像pip安装/" class="archive-article-date">
+  	<time datetime="2019-06-21T02:23:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-21</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="让python-pip使用国内镜像"><a href="#让python-pip使用国内镜像" class="headerlink" title="让python pip使用国内镜像"></a><a href="https://www.cnblogs.com/wqpkita/p/7248525.html" target="_blank" rel="noopener">让python pip使用国内镜像</a></h2><ul>
+        <ul>
 <li><h2 id="国内源："><a href="#国内源：" class="headerlink" title="国内源："></a>国内源：</h2></li>
 </ul>
 <p>清华：<a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a></p>
@@ -171,19 +186,9 @@
 <p>山东理工大学：<a href="http://pypi.sdutlinux.org/" target="_blank" rel="noopener">http://pypi.sdutlinux.org/</a> </p>
 <p>豆瓣：<a href="http://pypi.douban.com/simple/" target="_blank" rel="noopener">http://pypi.douban.com/simple/</a></p>
 <p><em>note：使用时下载失败，要求使用<strong>https</strong>源，要注意。</em></p>
-<ul>
-<li><h2 id="临时使用："><a href="#临时使用：" class="headerlink" title="临时使用："></a>临时使用：</h2></li>
-</ul>
-<p>可以在使用pip的时候加参数-i <a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a><br>例如：pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a> pyspider，这样就会从清华这边的镜像去安装pyspider库。</p>
-<ul>
-<li><h2 id="永久修改，一劳永逸："><a href="#永久修改，一劳永逸：" class="headerlink" title="永久修改，一劳永逸："></a>永久修改，一劳永逸：</h2></li>
-</ul>
-<p><a href="http://lib.csdn.net/base/linux" target="_blank" rel="noopener">Linux</a>下，修改 ~/.pip/pip.conf (没有就创建一个文件夹及文件。文件夹要加“.”，表示是隐藏文件夹)</p>
-<p>内容如下：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">[install]</span><br><span class="line">trusted-host=mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
-<p>windows下，直接在user目录中创建一个pip目录，再新建文件pip.ini。（例如：C:\Users\admin\pip\pip.ini）内容同上。</p>
-<p>引用：<a href="http://www.cnblogs.com/microman/p/6107879.html" target="_blank" rel="noopener">让PIP源使用国内镜像，提升下载速度和安装成功率- microman - 博客园</a></p>
-
+        
+          <a class="article-more-a" href="/2019/06/21/国内镜像pip安装/#more">more >></a>
+        
       
 
       
@@ -195,7 +200,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/29/国内镜像pip安装/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/06/21/国内镜像pip安装/">展开全文 >></a>
         </p>
       
 
